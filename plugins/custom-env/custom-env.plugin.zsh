@@ -1,12 +1,14 @@
 # shellcheck shell=bash
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
+# Disable Ruby Version Manager (RVM) if it is installed
 export ZSH_2000_DISABLE_RVM=true;
 
 # Preferred editor for local and remote sessions
 export CUSTOM_FUNCTIONS_PATH="$HOME/.zsh/custom-functions";
 export CUSTOM_ENV_PATH="$HOME/.zsh/custom-env";
 
+# Check if over SSH, default to terminal editors, and visual otherwise.
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nano'
   export VISUAL=$EDITOR

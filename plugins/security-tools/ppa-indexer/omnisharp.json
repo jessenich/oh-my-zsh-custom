@@ -1,0 +1,36 @@
+{
+  "FormattingOptions": {
+    "EnableEditorConfigSupport": true,
+    "NewLineForMembersInAnonymousTypes": true,
+    "NewLineForMembersInObjectInit": false,
+    "NewLineForClausesInQuery": true,
+    "NewLinesForBracesInAccessors": false,
+    "NewLinesForBracesInAnonymousMethods": false,
+    "NewLinesForBracesInAnonymousTypes": false,
+    "NewLinesForBracesInControlBlocks": false,
+    "NewLinesForBracesInLambdaExpressionBody": false,
+    "NewLinesForBracesInMethods": false,
+    "NewLinesForBracesInObjectCollectionArrayInitializers": false,
+    "NewLinesForBracesInProperties": false,
+    "NewLinesForBracesInTypes": false,
+    "UseTabs": false
+  },
+  "RoslynExtensionsOptions": {
+    "EnableAnalyzersSupport": true,
+    "EnableDecompilationSupport": true
+  },
+  "ImplementTypeOptions": {
+    "InsertionBehavior": "WithOtherMembersOfTheSameKind",
+    "PropertyGenerationBehavior": "PreferAutoProperties",
+    "EventGenerationBehavior": "PreferAutoEvents",
+    "MethodGenerationBehavior": "PreferAutoPropertiesWhenPossible"
+  },
+  "RenameOptions": {
+    "RenameOverloads": true
+  },
+  "script": {
+    "defaultTargetFramework": "net50",
+    "enabled": true,
+    "enableScriptNuGetReferences": true
+  }
+}
