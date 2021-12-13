@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-load-completions() {
+__load-completions() {
   local plugin_path="$ZSH_CUSTOM/plugins/completion-extras";
   declare -A comp_exes;
   local comp_exes=(
@@ -10,13 +10,22 @@ load-completions() {
     [kubectl]="source <(kubectl completion zsh)"
     [microk8s]="source <(microk8s kubectl completion zsh); source <(microk8s helm completion zsh); source <(microk8s helm3 completion zsh);"
     [gh]="source <(gh completion -s zsh)"
+    [kind]="source <(kind completion zsh)"
   )
 
   for exe cmd in "${(@kv)comp_exes}"; do
-    if command -v "$exe" >/dev/null 2>&1; then
+    if command -v "$exe" >/dev/null; then
+      if [ "$OHMYZSH_DEBUG_SHELL" = "true" ]; then
+        echo "Loading $exe completion for $cmd"
+      fi
+
       eval "$cmd"
+
+      if [ "$OHMYZSH_DEBUG_SHELL" = "true" ]; then
+        echo "Loaded $exe completion for $cmd"
+      fi
     fi
   done
 }
 
-load-completions;
+__load-completions "$@";
