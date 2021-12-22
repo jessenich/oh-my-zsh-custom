@@ -1,3 +1,6 @@
 [submodule "themes/powerlevel10k"]
 	path = themes/powerlevel10k
 	url = https://github.com/jessenich/powerlevel10k
+[submodule "plugins/zsh-histdb"]
+	path = plugins/zsh-histdb
+	url = https://github.com/larkery/zsh-histdb.git
