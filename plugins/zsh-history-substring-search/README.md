@@ -11,13 +11,14 @@ press chosen keys, such as the UP and DOWN arrows, to cycle through matches.
 [5]: https://github.com/zsh-users/zsh-history-substring-search
 [6]: https://github.com/zsh-users/zsh-syntax-highlighting
 
+#### Requirements
 
-Requirements
 ------------------------------------------------------------------------------
 
 * [ZSH](http://zsh.sourceforge.net) 4.3 or newer
 
 Install
+
 ------------------------------------------------------------------------------
 
 Using the [Homebrew]( https://brew.sh ) package manager:
@@ -42,7 +43,7 @@ Using [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
 Usage
 ------------------------------------------------------------------------------
 
-1.  Load this script into your interactive ZSH session:
+1. Load this script into your interactive ZSH session:
 
         % source zsh-history-substring-search.zsh
 
@@ -52,7 +53,7 @@ Usage
         % source zsh-syntax-highlighting.zsh
         % source zsh-history-substring-search.zsh
 
-2.  Bind keyboard shortcuts to this script's functions.
+2. Bind keyboard shortcuts to this script's functions.
 
     Users typically bind their UP and DOWN arrow keys to this script, thus:
     * Run `cat -v` in your favorite terminal emulator to observe key codes.
@@ -83,7 +84,7 @@ Usage
           bindkey -M vicmd 'k' history-substring-search-up
           bindkey -M vicmd 'j' history-substring-search-down
 
-3.  Type any part of any previous command and then:
+3. Type any part of any previous command and then:
 
     * Press the `history-substring-search-up` key, which was configured in
       step 2 above, to select the nearest command that (1) contains your query
@@ -95,7 +96,7 @@ Usage
 
     * Press `^U` the Control and U keys simultaneously to abort the search.
 
-4.  If a matching command spans more than one line of text, press the LEFT
+4. If a matching command spans more than one line of text, press the LEFT
     arrow key to move the cursor away from the end of the command, and then:
 
     * Press the `history-substring-search-up` key, which was configured in
@@ -109,7 +110,6 @@ Usage
       When the cursor reaches the last line of the command, pressing the
       `history-substring-search-down` key, which was configured in step 2
       above, again will cause this script to perform another search.
-
 
 Configuration
 ------------------------------------------------------------------------------
@@ -160,7 +160,6 @@ default values.
   search result appeared twice as you cycled through them. If you wish to
   receive globally unique search results only once, then use this
   configuration variable, or use `setopt HIST_IGNORE_ALL_DUPS`.
-
 
 History
 ------------------------------------------------------------------------------

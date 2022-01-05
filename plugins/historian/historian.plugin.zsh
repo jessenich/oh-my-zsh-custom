@@ -3,7 +3,7 @@
 VERSION="1.0.0"
 HISTORIAN_SRC=${HISTORIAN_SRC:-"$HOME/.zsh_history"}
 HISTORIAN_DB=${HISTORIAN_DB:-"$ZSHRC_DIR/zsh.historian.db"}
-HISTORIAN_SQLITE3=${HISTORIAN_SQLITE3:-"$(command -v sqlite3)"}
+HISTORIAN_SQLITE3=${HISTORIAN_SQLITE3:-"$(builtin command -v sqlite3)"}
 
 usage() {
     echo "Usage: hist <subcommand>" >&2
