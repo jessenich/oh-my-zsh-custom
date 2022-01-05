@@ -6,25 +6,6 @@ command-exists() {
     builtin command -v "$1" >/dev/null 2>&1 || return 1;
 }
 
-join-array() {
-    if [ "$#" -eq 1 ]; then exit 0; fi
-
-    local -r delimiter;
-    if [ "$1" = "-d" ] || [ "$1" = "--delimiter" ]; then
-        delimiter="$2";
-        shift 2;
-    else
-        delimiter="${#1}";
-        shift;
-    fi
-    local -r cpa_paths;
-    while [ "$#" -gt 0 ]; do
-        cpa_paths="${cpa_paths}${delimiter}${1}";
-        shift;
-    done
-
-    echo "${cpa_paths[@]}";
-}
 
 
 sourceall() {
@@ -63,7 +44,7 @@ dotenv() {
         case "$1" in
             -s | --source-only)
                 local source_only=true;$PATH
-                shift;;
+            shift;;
         esac
     done
 
@@ -89,7 +70,7 @@ secret() {
         case "$1" in
             -h | --help)
                 _gs_show_usage;
-                return "$?";;
+            return "$?";;
 
             *)
                 if [ -z "$var_value" ]; then
@@ -98,7 +79,7 @@ secret() {
                 else
                     local -r var_value="$1";
                 fi
-                shift;;
+            shift;;
         esac
     done
 
