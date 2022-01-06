@@ -66,13 +66,17 @@ else
 fi
 
 # NVM Home
-NVM_DIR="${NVM_DIR:-"$HOME/.nvm"}"
+test command -v nvm >/dev/null 2>&1 && \
+    export NVM_DIR="${NVM_DIR:-"$HOME/.nvm"}"
 
 # DotNet Configs
 
 export DEVELOPMENT_PATH=${DEVELOPMENT_PATH:-"$HOME/Development"};
 export WORKSPACES_PATH=${WORKSPACES_PATH:-"$DEVELOPMENT_PATH/workspaces"};
 export GITHUB_PATH=${GITHUB_PATH:-"$DEVELOPMENT_PATH/repos/github"};
+
+test -d "$WORKSPACES_PATH" || mkdir -p "$WORKSPACES_PATH";
+test -d "$GITHUB_PATH" || mkdir -p "$GITHUB_PATH";
 
 if [ -z "$VISUAL" ] || [ $VISUAL = '' ]; then
     alias VISUAL="code -n";
